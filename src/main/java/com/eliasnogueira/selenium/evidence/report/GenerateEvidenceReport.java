@@ -93,23 +93,7 @@ public class GenerateEvidenceReport {
         parameters.put("SEL_EXCEPTION", exception);
       }
 
-      parameters.put("SEL_COMPANY_LOGO", imageCompany);
-      parameters.put("SEL_CUSTOMER_LOGO", imageClient);
-      parameters.put("SEL_PROJECT", project);
-      parameters.put("SEL_TESTER", tester);
-
-      parameters.put("SEL_LABEL_EVINDENCE_TITLE", properties.getProperty("label.evidenceReport"));
-      parameters.put("SEL_LABEL_PROJECT", properties.getProperty("label.projetc"));
-      parameters.put("SEL_LABEL_TESTER", properties.getProperty("label.tester"));
-      parameters.put("SEL_LABEL_STATUS", properties.getProperty("label.status"));
-      parameters.put("SEL_LABEL_PASS", properties.getProperty("label.status.pass"));
-      parameters.put("SEL_LABEL_FAILED", properties.getProperty("label.status.failed"));
-      parameters.put("SEL_LABEL_EVIDENCE_REPORT", properties.getProperty("label.evidenceReport"));
-      parameters.put("SEL_LABEL_DATE", properties.getProperty("label.date"));
-      parameters.put("SEL_LABEL_FOOTER", properties.getProperty("label.footer"));
-      parameters.put("SEL_LABEL_ERROR_DETAIL", properties.getProperty("label.errorDetail"));
-      parameters.put("SEL_LABEL_PAGE", properties.getProperty("label.page"));
-      parameters.put("SEL_LABEL_COMPANY_NAME", properties.getProperty("label.company.name"));
+      setupReportParameters(tester, project, properties, imageCompany, imageClient, parameters);
 
       JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(data);
       JasperReport jasperReport = JasperCompileManager.compileReport(properties.getProperty("evidence.file"));
@@ -122,6 +106,26 @@ public class GenerateEvidenceReport {
     } catch (JRException jre) {
       jre.printStackTrace();
     }
+  }
+
+  private static void setupReportParameters(String tester, String project, Properties properties, BufferedImage imageCompany, BufferedImage imageClient, Map<String, Object> parameters) {
+    parameters.put("SEL_COMPANY_LOGO", imageCompany);
+    parameters.put("SEL_CUSTOMER_LOGO", imageClient);
+    parameters.put("SEL_PROJECT", project);
+    parameters.put("SEL_TESTER", tester);
+
+    parameters.put("SEL_LABEL_EVINDENCE_TITLE", properties.getProperty("label.evidenceReport"));
+    parameters.put("SEL_LABEL_PROJECT", properties.getProperty("label.projetc"));
+    parameters.put("SEL_LABEL_TESTER", properties.getProperty("label.tester"));
+    parameters.put("SEL_LABEL_STATUS", properties.getProperty("label.status"));
+    parameters.put("SEL_LABEL_PASS", properties.getProperty("label.status.pass"));
+    parameters.put("SEL_LABEL_FAILED", properties.getProperty("label.status.failed"));
+    parameters.put("SEL_LABEL_EVIDENCE_REPORT", properties.getProperty("label.evidenceReport"));
+    parameters.put("SEL_LABEL_DATE", properties.getProperty("label.date"));
+    parameters.put("SEL_LABEL_FOOTER", properties.getProperty("label.footer"));
+    parameters.put("SEL_LABEL_ERROR_DETAIL", properties.getProperty("label.errorDetail"));
+    parameters.put("SEL_LABEL_PAGE", properties.getProperty("label.page"));
+    parameters.put("SEL_LABEL_COMPANY_NAME", properties.getProperty("label.company.name"));
   }
 
 
@@ -186,23 +190,7 @@ public class GenerateEvidenceReport {
         parameters.put("SEL_EXCEPTION", exception);
       }
 
-      parameters.put("SEL_COMPANY_LOGO", imageCompany);
-      parameters.put("SEL_CUSTOMER_LOGO", imageClient);
-      parameters.put("SEL_PROJECT", project);
-      parameters.put("SEL_TESTER", tester);
-
-      parameters.put("SEL_LABEL_EVINDENCE_TITLE", properties.getProperty("label.evidenceReport"));
-      parameters.put("SEL_LABEL_PROJECT", properties.getProperty("label.projetc"));
-      parameters.put("SEL_LABEL_TESTER", properties.getProperty("label.tester"));
-      parameters.put("SEL_LABEL_STATUS", properties.getProperty("label.status"));
-      parameters.put("SEL_LABEL_PASS", properties.getProperty("label.status.pass"));
-      parameters.put("SEL_LABEL_FAILED", properties.getProperty("label.status.failed"));
-      parameters.put("SEL_LABEL_EVIDENCE_REPORT", properties.getProperty("label.evidenceReport"));
-      parameters.put("SEL_LABEL_DATE", properties.getProperty("label.date"));
-      parameters.put("SEL_LABEL_FOOTER", properties.getProperty("label.footer"));
-      parameters.put("SEL_LABEL_ERROR_DETAIL", properties.getProperty("label.errorDetail"));
-      parameters.put("SEL_LABEL_PAGE", properties.getProperty("label.page"));
-      parameters.put("SEL_LABEL_COMPANY_NAME", properties.getProperty("label.company.name"));
+      setupReportParameters(tester, project, properties, imageCompany, imageClient, parameters);
 
       JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(data);
 
