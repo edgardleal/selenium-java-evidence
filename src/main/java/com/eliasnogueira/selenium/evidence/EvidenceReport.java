@@ -1,5 +1,7 @@
 package com.eliasnogueira.selenium.evidence;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.List;
 
 public class EvidenceReport {
@@ -37,7 +39,7 @@ public class EvidenceReport {
    * @return the reportName
    */
   public String getReportName() {
-    return reportName;
+    return StringUtils.defaultIfEmpty(reportName, "No Name");
   }
 
   /**
@@ -49,7 +51,7 @@ public class EvidenceReport {
 
 
   public String getTester() {
-    return tester;
+    return StringUtils.defaultIfEmpty(tester, "WebDriver");
   }
 
   public void setTester(String tester) {
@@ -60,7 +62,7 @@ public class EvidenceReport {
    * @return the project
    */
   public String getProject() {
-    return project;
+    return StringUtils.defaultIfEmpty(project, "No Project Name");
   }
 
   /**
@@ -74,7 +76,7 @@ public class EvidenceReport {
    * @return the exceptionString
    */
   public String getExceptionString() {
-    return exceptionString;
+    return StringUtils.defaultIfEmpty(exceptionString, "Exception not informed");
   }
 
   /**
