@@ -16,9 +16,7 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/eliasnogueira/selenium-java-evidence</url>
-        <connection>https://github.com/eliasnogueira/selenium-java-evidence.git</connection>
-        <developerConnection>Elias Nogueira</developerConnection>
+        <url>scm:git:https://github.com/eliasnogueira/selenium-java-evidence</url>
     </scm>
     <developers>
         <developer>
